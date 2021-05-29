@@ -63,10 +63,8 @@ def about():
 
 if __name__ == '__main__':
     
-    #Basic tkinter setup
     root = Tk()
     root.title("Untitled - Notepad")
-    # root.wm_iconbitmap("1.ico")
     root.geometry("1024x700")
 
     #Add TextArea
@@ -86,7 +84,6 @@ if __name__ == '__main__':
     FileMenu.add_command(label="Open", command = openFile)
 
     # To save the current file
-
     FileMenu.add_command(label = "Save", command = saveFile)
     FileMenu.add_separator()
     FileMenu.add_command(label = "Exit", command = quitApp)
@@ -101,7 +98,6 @@ if __name__ == '__main__':
     EditMenu.add_command(label = "Paste", command=paste)
 
     MenuBar.add_cascade(label="Edit", menu = EditMenu)
-
     # Edit Menu Ends
 
     # Help Menu Starts
@@ -113,7 +109,7 @@ if __name__ == '__main__':
 
     root.config(menu=MenuBar)
 
-    #Adding Scrollbar using rules from Tkinter lecture no 22
+    #Adding Scrollbar
     Scroll = Scrollbar(TextArea)
     Scroll.pack(side=RIGHT,  fill=Y)
     Scroll.config(command=TextArea.yview)
